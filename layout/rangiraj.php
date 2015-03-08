@@ -48,29 +48,45 @@
 <br><br><br><br><br><br><br><br>
 <div class="jumbotron row1">
 	<div class="row">
+	
 							<div class="col-md-4"> </div>
 		
 		<div class="col-md-4"> 
 						
 		
-			<div class="dropdown  ">
-				<button class="btn btn-default dropdown-toggle btn-block" type="button" name="dd" id="menu1" data-toggle="dropdown"> <div name="namee" class="paragrafTxT">Одберете го универзитетот на кој што студирате</div>
-				<span class="caret"></span></button>
+			<div >
+			<?php 
+				require 'connect.php';
+				
+				$ugd="SELECT ime_univerzitet FROM univerzitet WHERE id_univerzitet=4";
+				$result_ugd=mysqli_query($rangiraj,$ugd) ;
+				
+					$mail="SELECT username FROM korisnici WHERE id_korisnik=1";
+					if($mail_result=mysqli_query($rangiraj,$mail)){
+						if(mysqli_num_rows($mail_result)){
+							$rows=mysqli_fetch_all($mail_result,MYSQL_ASSOC);
+							foreach($rows as $row){
+								$substr=substr($row['username'],-19);
+								if($substr=="students.ugd.edu.mk"){ 
+								
+								?>
+									<button class="btn btn-default btn-block" type="button" name="dd" id="menu1" >Универзитет „Гоце Делчев“</div>
+							<?php	}
+							}
+						}
+						
+					}
+										
+					?>
+					
+					
+					
+			
+				
+				
 				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1" name="first" id="first">
 					  
-				<script>
-	$(function(){
-
-    $("#first li a").click(function(){
-
-      $("#menu1:first-child").text($(this).text());
-      $("#menu1:first-child").val($(this).text());
-	  var a = $("#menu1:first-child").val($(this).text());
-	 
-   });
-
-});
-</script>
+	
 				
 				
 				
