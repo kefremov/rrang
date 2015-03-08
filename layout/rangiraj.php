@@ -79,11 +79,6 @@
 										
 					?>
 					
-					
-					
-			
-				
-				
 				<ul class="dropdown-menu" role="menu" aria-labelledby="menu1" name="first" id="first">
 					  
 	
